@@ -14,19 +14,30 @@
   // Once you've read this, go ahead and try to implement this function, then return to the console.
 
   var detectNetwork = function(cardNumber) {
-    var prefix = cardNumber.slice(0,2);
+    var prefix2 = cardNumber.slice(0,2);
+    var prefix3 = cardNumber.slice(0,3);
+    var prefix4 = cardNumber.slice(0,4);
     var length = cardNumber.length;
-    if ((prefix === '38' || prefix ===  '39') && (length === 14)) {
+    if ((prefix2 === '38' || prefix2 ===  '39') && (length === 14)) {
       return "Diner's Club";
     }
-    if ((prefix === '34' || prefix ===  '37') && (length === 15)) {
+    if ((prefix2 === '34' || prefix2 ===  '37') && (length === 15)) {
       return "American Express";
     }
-    if ((prefix[0] === '4') && (length === 13 || length === 16 || length === 19)) {
+    if ((cardNumber[0] === '4') && (length === 13 || length === 16 || length === 19)) {
       return "Visa";
     }
-    if ((prefix >= '51') && (prefix <= '55') && (length === 16)) {
+    if ((prefix2 >= '51') && (prefix2 <= '55') && (length === 16)) {
       return "MasterCard";
+    }
+    if ((prefix4 === '6011' || prefix2 === '65') && (length === 16 || length === 19)) {
+      return "Discover";
+    }
+    if ((prefix3 >= '644' && prefix3 <= 649) && (length === 16 || length === 19)) {
+      return "Discover";
+    }
+    if ((prefix4 === '5018' || prefix4 === '5020' || prefix4 === '5038' || prefix4 === '6304') && (length >= 12 && length <= 19)) {
+      return 'Maestro';
     }
   };
 
