@@ -149,10 +149,10 @@ describe('Discover', function() {
     detectNetwork('6011123456789012345').should.equal('Discover');
   });
   it('has a prefix of 644 and a length of 16', function() {
-    detectNetwork('6011123456789012').should.equal('Discover');
+    detectNetwork('6441123456789012').should.equal('Discover');
   });
   it('has a prefix of 644 and a length of 19', function() {
-    detectNetwork('6011123456789012345').should.equal('Discover');
+    detectNetwork('6441123456789012345').should.equal('Discover');
   });
   it('has a prefix of 645 and a length of 16', function() {
     detectNetwork('6451123456789012').should.equal('Discover');
